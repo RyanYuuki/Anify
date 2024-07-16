@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "/anify-startup", "use": "@vercel/node" },
+    { "src": "/anify-frontend", "use": "@vercel/static-build" },
+    { "src": "/anify-backend", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/anify-startup/(.*)", "dest": "/anify-startup/$1" },
+    { "src": "/anify-frontend/(.*)", "dest": "/anify-frontend/$1" },
+    { "src": "/anify-backend/(.*)", "dest": "/anify-backend/$1" }
+  ]
+}
